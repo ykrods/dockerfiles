@@ -1,0 +1,17 @@
+---
+version: '3'
+services:
+  firebase:
+    build: .
+    volumes:
+      - .:/work
+      - firebase-config:/home/firebase/.config
+    working_dir: "/work"
+    # entrypoint: "firebase"
+    command: "/bin/bash"
+    ports:
+      - 9005:9005 # firebase login
+      - 5000:5000 # hosting
+      - 5001:5001 # functions
+volumes:
+  firebase-config:
