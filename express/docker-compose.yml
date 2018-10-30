@@ -9,5 +9,16 @@ services:
     ports:
       - "3000:3000"
       - "9229:9229"
-    command: "nodemon --inspect=0.0.0.0:9229 --watch src"
+    command: "nodemon --inspect=0.0.0.0:9229" # --watch src
     init: true
+    environment:
+      DATABASE_URL: "mysql://express:express@db:3306/express"
+  db:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: express
+      MYSQL_DATABASE: express
+      MYSQL_USER: express
+      MYSQL_PASSWORD: express
