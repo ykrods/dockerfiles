@@ -13,5 +13,6 @@ server.listen(3000, () => {
 });
 
 process.on('SIGINT', () => {
-  console.log('onfinish normally')
+  console.log('shutdown')
+  process.exit()
 });
