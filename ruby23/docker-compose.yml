@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  ruby23:
+    build: .
+    volumes:
+      - ./code:/code
+      - bundle:/bundle
+    working_dir: /code
+    environment:
+      BUNDLE_PATH: /bundle
+    ports:
+      - "3000:3000"
+volumes:
+  bundle:
