@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  python3:
+    image: python:3.7
+    volumes:
+      - ./code:/code
+      - venvs:/venvs
+    working_dir: /code
+    ports:
+    - "8000:8000"
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PATH=/venvs/venv/bin:$PATH
+volumes:
+  venvs:
