@@ -4,11 +4,9 @@ services:
   firebase:
     build: .
     volumes:
-      - .:/work
+      # - ~/path/to/app:/code
       - firebase-config:/home/firebase/.config
-    working_dir: "/work"
-    # entrypoint: "firebase"
-    command: "/bin/bash"
+    working_dir: "/code"
     ports:
       - 9005:9005 # firebase login
       - 5000:5000 # hosting

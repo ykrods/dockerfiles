@@ -1,15 +1,11 @@
 How to use
 ===========
 
-- XXX: プロジェクトのディレクトリは適宜マウントする
+- プロジェクトは適宜 `/code` にマウントする
+- node_modules は単純にマウント元に作成される(コード読みたい時あるし
 
 ::
 
-  $ docker-compose run --rm --user=root firebase /bin/bash -c "chown firebase:firebase /home/firebase/.config"
-  $ docker-compose run --rm --service-ports firebase /bin/bash -c "firebase login"
-  $ docker-compose run --rm firebase
-
-Note
-=====
-
-- XXX: .config のパーミッション変えるのはもうちょっとやり方がありそう
+  $ docker-compose run --rm --service-ports firebase login
+  $ docker-compose run --rm --entrypoint=/bin/bash firebase
+  $ docker-compose run --rm firebase deploy

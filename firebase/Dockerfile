@@ -1,5 +1,5 @@
-# Google Cloud Functions supports v6.11.5.
-FROM node:8.11.4
+# Google Cloud Functions supports v8.11.1 as of 2018-12-02
+FROM node:8.11.1
 
 # Update npm
 RUN npm install -g npm@latest && \
@@ -14,3 +14,5 @@ RUN mkdir /home/firebase/.npm-global && \
     npm install -g firebase-tools
 
 ENV PATH=~/.npm-global/bin:$PATH
+
+ENTRYPOINT ["/home/firebase/.npm-global/bin/firebase"]
