@@ -4,7 +4,7 @@ services:
   firebase:
     build: .
     volumes:
-      # - ~/path/to/app:/code
+      - ${APP_VOLUME_PATH}:/code
       - firebase-config:/home/firebase/.config
     working_dir: "/code"
     ports:

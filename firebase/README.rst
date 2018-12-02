@@ -1,11 +1,16 @@
 How to use
 ===========
 
-- プロジェクトは適宜 `/code` にマウントする
+- .env に次を追加 `APP_VOLUME_PATH=/path/to/app`
+- 以下の感じで
+
+  ::
+
+    $ docker-compose run --rm --service-ports firebase login
+    $ docker-compose run --rm --entrypoint=/bin/bash firebase # shell
+    $ docker-compose run --rm firebase deploy
+
+備考
+====
+
 - node_modules は単純にマウント元に作成される(コード読みたい時あるし
-
-::
-
-  $ docker-compose run --rm --service-ports firebase login
-  $ docker-compose run --rm --entrypoint=/bin/bash firebase
-  $ docker-compose run --rm firebase deploy
