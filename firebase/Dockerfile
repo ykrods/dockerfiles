@@ -13,6 +13,7 @@ RUN mkdir /home/firebase/.npm-global && \
     npm config set prefix '~/.npm-global' && \
     npm install -g firebase-tools
 
-ENV PATH=~/.npm-global/bin:$PATH
+ENV PATH /home/firebase/.npm-global/bin:$PATH
 
-ENTRYPOINT ["/home/firebase/.npm-global/bin/firebase"]
+ENTRYPOINT ["firebase"]
+CMD ["serve", "--host", "0.0.0.0"]

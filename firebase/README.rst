@@ -6,9 +6,17 @@ How to use
 
   ::
 
-    $ docker-compose run --rm --service-ports firebase login
-    $ docker-compose run --rm --entrypoint=/bin/bash firebase # shell
-    $ docker-compose run --rm firebase deploy
+     # login
+     $ docker-compose run --rm --service-ports firebase login
+
+     # shell to init project
+     $ docker-compose run --rm --entrypoint=/bin/bash firebase
+
+     # serve
+     $ docker-compose run --rm firebase
+
+     # deploy
+     $ docker-compose run --rm firebase deploy
 
 備考
 ====
