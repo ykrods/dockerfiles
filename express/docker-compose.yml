@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  express:
+    build: .
+    volumes:
+      - .:/code
+      - /code/node_modules
+    working_dir: /code
+    ports:
+      - "3000:3000"
+    command: "npm run serve:dev"
+    init: true
