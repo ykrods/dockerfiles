@@ -4,7 +4,7 @@
   "description": "Skeleton package for express app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve:dev": "nodemon --inspect ./core/server.js"
+    "serve:local": "nodemon --inspect ./src/server.js"
   },
   "private": true,
   "license": "UNLICENSED",

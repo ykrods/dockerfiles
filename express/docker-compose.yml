@@ -8,5 +8,5 @@ services:
     working_dir: /code
     ports:
       - "3000:3000"
-    command: "npm run serve:dev"
+    command: "npm run serve:local"
     init: true
