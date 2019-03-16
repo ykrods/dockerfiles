@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  sphinx:
+    image: tsgkadot/sphinx-plantuml:latest
+    volumes:
+      - "${PROJECT_PATH:-./project}:/project"
+    working_dir: /project
+    command: ["sphinx-quickstart"]
