@@ -4,9 +4,9 @@ services:
   firebase:
     build: .
     volumes:
-      - ${APP_VOLUME_PATH}:/code
+      - "${PROJECT_PATH:-./project}:/project"
       - firebase-config:/home/firebase/.config
-    working_dir: "/code"
+    working_dir: /project
     ports:
       - 9005:9005 # firebase login
       - 5000:5000 # hosting

@@ -1,7 +1,7 @@
 How to use
 ===========
 
-- .env に次を追加 `APP_VOLUME_PATH=/path/to/app`
+- .env に次を追加 `PROJECT_PATH=/path/to/app`
 - 以下の感じで
 
   ::
@@ -21,4 +21,4 @@ How to use
 備考
 ====
 
-- node_modules は単純にマウント元に作成される(コード読みたい時あるし
+- node_modules は単純にマウント元に作成される
