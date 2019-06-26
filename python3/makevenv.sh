@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ ! -d /venvs/venv ]; then
-    python3 -m venv /venvs/venv
+if [ ! -d ${VENV_PATH} ]; then
+    python3 -m venv ${VENV_PATH}
 fi
 
-if [ -f /code/requirements.txt ]; then
-    /venvs/venv/bin/pip install -r /code/requirements.txt
+if [ -f ${PROJECT_PATH}/requirements.txt ]; then
+    ${VENV_PATH}/bin/pip install -r ${PROJECT_PATH}/requirements.txt
 fi
