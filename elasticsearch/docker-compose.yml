@@ -1,0 +1,19 @@
+---
+version: '3.7'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    volumes:
+      - my-es-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    environment:
+      - node.name=my-es
+      - discovery.type=single-node
+      - cluster.name=my-es-cluster
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.2.0
+    ports:
+      - 5601:5601
+volumes:
+  my-es-data:
