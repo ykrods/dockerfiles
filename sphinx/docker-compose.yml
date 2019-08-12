@@ -1,8 +1,22 @@
 version: "3.7"
 services:
   sphinx:
-    image: tsgkadot/sphinx-plantuml:latest
+    image: dldl/sphinx-server
     volumes:
-      - "${PROJECT_PATH:-./project}:/project"
-    working_dir: /project
-    command: ["sphinx-quickstart"]
+      - "${PROJECT_PATH:-./project}:/web"
+      - build:/_build/html
+    ports:
+      - "8000:8000"
+    working_dir: /web
+    command:
+      - "sphinx-autobuild"
+      - "--port=8000"
+      - "--host=0.0.0.0"
+      - "--open-browser"
+      - "--delay=5"
+      - "--ignore='.git'"
+      - "--ignore='.#*'" # きいてない？
+      - "/web"
+      - "/_build/html"
+volumes:
+  build:
