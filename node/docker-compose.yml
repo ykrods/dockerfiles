@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  node:
+    image: node:lts
+    volumes:
+      - "${PROJECT_PATH:-./project}:/project"
+      - cache:/project/node_modules
+    working_dir: /project
+    ports:
+      - "3000:3000"
+    command: "node"
+    init: true
+    environment:
+      - PATH=/project/node_modules/.bin/:$PATH
+volumes:
+  cache:
