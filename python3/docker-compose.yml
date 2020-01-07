@@ -12,5 +12,6 @@ services:
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
       - PROJECT_PATH
+    init: true
 volumes:
   cache:

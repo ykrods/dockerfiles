@@ -1,10 +1,10 @@
 version: "3.7"
 services:
   sphinx:
-    image: dldl/sphinx-server
+    build: .
     volumes:
       - "${PROJECT_PATH:-./project}:/web"
-      - build:/_build/html
+      # - build:/_build/html
     ports:
       - "8000:8000"
     working_dir: /web
@@ -17,6 +17,6 @@ services:
       - "--ignore='.git'"
       - "--ignore='.#*'" # きいてない？
       - "/web"
-      - "/_build/html"
+      - "/web/_build/html"
 volumes:
   build:
