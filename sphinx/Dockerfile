@@ -1,9 +1,6 @@
 FROM python:3.8.1
 
-# TODO: support plantUML
-RUN apt-get update && \
-  apt-get install -y openjdk-11-jre graphviz
-COPY requirements.txt /root/requirements.txt
-RUN pip install -r /root/requirements.txt
+RUN pip install -U pip setuptools wheel && \
+  pip install sphinx sphinx-autobuild sphinxcontrib-jsmath sphinxcontrib-mermaid sphinx_rtd_theme
 
-CMD ["python", "/opt/sphinx-server/server.py"]
+CMD ["sphinx-build"]

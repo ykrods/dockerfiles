@@ -4,7 +4,7 @@ services:
     build: .
     volumes:
       - "${PROJECT_PATH:-./project}:/web"
-      # - build:/_build/html
+      - build:/web/_build/html
     ports:
       - "8000:8000"
     working_dir: /web
