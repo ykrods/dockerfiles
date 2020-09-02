@@ -1,0 +1,11 @@
+---
+version: '3'
+services:
+  fossil:
+    build: .
+    volumes:
+      - ./projects:/home/fossil/projects
+    working_dir: /home/fossil/projects
+    ports:
+      - 8080:8080
+# volumes:
