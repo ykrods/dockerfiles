@@ -10,8 +10,8 @@ RUN useradd --create-home fossil
 USER fossil
 WORKDIR /home/fossil/
 RUN mkdir /home/fossil/.bin && \
-  curl -s -O https://fossil-scm.org/fossil/uv/fossil-linux-x64-2.11.1.tar.gz && \
-  tar xzvf fossil-linux-x64-2.11.1.tar.gz --directory /home/fossil/.bin && \
+  curl -s -O https://fossil-scm.org/home/uv/fossil-linux-x64-2.14.tar.gz && \
+  tar xzvf fossil-linux-x64-2.14.tar.gz --directory /home/fossil/.bin && \
   mkdir /home/fossil/projects
 
 ENV PATH /home/fossil/.bin:$PATH

@@ -8,4 +8,5 @@ services:
     working_dir: /home/fossil/projects
     ports:
       - 8080:8080
+    command: ["fossil", "server", "example"]
 # volumes:
