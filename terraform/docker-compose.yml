@@ -1,11 +1,11 @@
 version: "3.7"
 services:
   terraform:
-    image: hashicorp/terraform
+    image: hashicorp/terraform:0.11.8
     volumes:
       - "${PROJECT_PATH:-./project}:/project"
     working_dir: /project
-    # entrypoint: /bin/bash
+    entrypoint: /bin/ash
     environment:
       - TF_VAR_access_key
       - TF_VAR_secret_key
