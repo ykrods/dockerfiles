@@ -1,11 +1,14 @@
 # Google Cloud Functions supports v8.11.1 as of 2018-12-02
-FROM node:8.11.1
+FROM node:lts
 
 # Update npm
 RUN npm install -g npm@latest && \
   useradd --create-home firebase
 
-USER firebase
+RUN mkdir /home/firebase/.config && \
+  chown firebase:firebase /home/firebase/.config
+
+USER firebase:firebase
 
 # How to prevent permission error
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions#option-two-change-npms-default-directory
