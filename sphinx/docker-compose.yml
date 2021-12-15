@@ -18,5 +18,9 @@ services:
       - "--ignore='.#*'" # きいてない？
       - "/web"
       - "/web/_build/html"
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+      - PROJECT_PATH
 volumes:
   build:
