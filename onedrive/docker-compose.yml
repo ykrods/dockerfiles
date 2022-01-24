@@ -1,0 +1,16 @@
+---
+version: '3'
+services:
+  onedrive:
+    image: driveone/onedrive:latest
+    restart: unless-stopped
+    environment:
+      # - ONEDRIVE_UID=${PUID}
+      # - ONEDRIVE_GID=${PGID}
+      - ONEDRIVE_UID=1000
+      - ONEDRIVE_GID=1000
+    volumes:
+      - onedrive_conf:/onedrive/conf
+      - ${ONEDRIVE_DATA_DIR}:/onedrive/data
+volumes:
+  onedrive_conf:
