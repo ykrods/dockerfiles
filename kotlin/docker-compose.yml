@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  gradle:
+    image: gradle:7.2.0-jdk8
+    # build: .
+    volumes:
+      - "${PROJECT_PATH:-./project}:/project"
+    working_dir: /project
+    command: bash
