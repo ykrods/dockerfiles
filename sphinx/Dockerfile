@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.11
 
 RUN pip install -U pip setuptools wheel
 
@@ -8,6 +8,6 @@ RUN pip install -r /tmp/requirements.txt
 # Install direct dependencies. This is used when upgrading packages.
 #
 # docutils: https://github.com/sphinx-doc/sphinx/issues/9001
-# RUN pip install sphinx docutils\<0.17 sphinx-autobuild sphinxcontrib-jsmath sphinxcontrib-mermaid sphinx-rtd-theme
+RUN pip install sphinx sphinx-autobuild sphinxcontrib-jsmath sphinxcontrib-mermaid furo
 
 CMD ["sphinx-build"]
