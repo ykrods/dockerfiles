@@ -1,0 +1,21 @@
+services:
+  ruby:
+    # build: .
+    image: ruby:3.3
+    volumes:
+      - "${CODE_PATH:-./code}:/code"
+      - ./bundle:/usr/local/bundle
+    working_dir: /code
+    environment:
+      # - BUNDLE_PATH=/bundle
+      # - PROJECT_ID
+      # - ACCESS_TOKEN
+      - CODE_PATH
+    ports:
+      - "3000:3000"
+    command:
+      - ruby
+      - -w
+      - main.rb
+volumes:
+  bundle:
